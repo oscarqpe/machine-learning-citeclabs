@@ -1,11 +1,12 @@
 # Curso Machine Learning
 
-#Primera Tarea: 
+#Segunda Tarea: 
 
-a) Crear una variable llamada 'historial_J' que almacene en cada iteración del algoritmo Gradient Descent  el valor de la Función Costo.
+Pregunta 1: ¿A más variables en la función hipótesis, mayor número de iteraciones debe dar el algoritmo para converger? Considerando que en todas ellas se utiliza el mismo alfa.
 
-b) Para valores de alpha = 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1, 1.3, 2, 3. Hacer un gráfico   ( iter, J )  donde se plotee el valor de la Función Costo (J) en la i-ésima iteración (Iter). El máximo número de iteraciones será de 1000.
+Si en las pruebas anteriores la ecuación de hipótesis de grado 50 demoro más que la de 3.
 
-Pregunta: ¿Cuál valor de alpha cree usted que consigue converger más rápido? 
+Pregunta 2: ¿Cree usted que se puede usar la función normal en la regresión logística?
 
-Respuesta: El valor de alpha con el que consigue converger más rápido es 1.3
+En mi opinión no porque la regresión logística requiere la función SIGMOIDAL y en la ecuación normal no se aplica eso. 
+
