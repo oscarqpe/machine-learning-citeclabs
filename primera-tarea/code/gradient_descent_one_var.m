@@ -11,7 +11,7 @@
     %Para la hipotesis: h_theta = theta_0 + theta_1 * x.
     theta_0 = 0;  
     theta_1 = 0;
-    
+    historial_J = zeros(1, num_iters);
     for iter = 1:num_iters
         % Para plotear grafico
         if mod( iter - 1, 50 ) == 0 
@@ -26,18 +26,23 @@
         % Variables auxiliares donde se almacena el valor de las derivadas parciales de la funcion costo.
         sum_0 = 0;
         sum_1 = 0;
+        sum_history = 0;
         for i = 1:m
             h_theta = theta_0  + theta_1 * x(i);
+            sum_history = (h_theta - y(i)) ^ 2;
             sum_0 = sum_0 + ( h_theta - y(i) );
             sum_1 = sum_1 + ( ( h_theta - y(i) ) * x(i) ); 
         end
+        historial_J(iter) = ( 1 / ( 2 * m ) ) * ( sum_history );
         % Actualizacion simultanea de los parametros theta_0 y theta_1
         theta_0 = theta_0 - alpha * ( 1.0 / m ) * sum_0;
         theta_1 = theta_1 - alpha * ( 1.0 / m ) * sum_1;
     end
-    
-    plot(x, y, '*');
-    hold on;
-    h_y = theta_0 + theta_1 * x;
-    plot(x, h_y, 'g');
+    disp(historial_J);
+    num_iterations = 1:1:iter;
+    plot(num_iterations, historial_J, '*');
+    %plot(x, y, '*');
+%     hold on;
+%     h_y = theta_0 + theta_1 * x;
+%     plot(x, h_y, 'g');
 
